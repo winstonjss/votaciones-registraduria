@@ -1,14 +1,13 @@
 package org.example.service;
 
+import org.example.dto.CandidatoDto;
+import org.example.dto.CandidatoListDto;
 import org.example.dto.MesaDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-public interface MesaService {
+public interface EliminarMesaService {
 
-    ResponseEntity<String> createMesa(MesaDto mesaDto);
-    ResponseEntity<List<MesaDto>> getAllMesa();
-    ResponseEntity<String> updateMesa(MesaDto mesaDto);
     ResponseEntity<String> deleteMesa(MesaDto mesaDto);
 }

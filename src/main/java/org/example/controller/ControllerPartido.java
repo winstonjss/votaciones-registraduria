@@ -1,8 +1,6 @@
 package org.example.controller;
 
-import org.example.dto.MesaDto;
 import org.example.dto.PartidoDto;
-import org.example.service.MesaService;
 import org.example.service.PartidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ControllerPartido {
 
     @Autowired

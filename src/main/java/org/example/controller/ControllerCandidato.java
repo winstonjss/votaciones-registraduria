@@ -12,6 +12,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin
 public class ControllerCandidato {
 
     @Autowired
