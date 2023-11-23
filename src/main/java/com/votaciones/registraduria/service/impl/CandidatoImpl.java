@@ -1,13 +1,14 @@
 package com.votaciones.registraduria.service.impl;
 
 import com.votaciones.registraduria.dto.CandidatoDto;
+import com.votaciones.registraduria.dto.CandidatoListDto;
 import com.votaciones.registraduria.jpa.CandidatoRepository;
 import com.votaciones.registraduria.model.Candidato;
 import com.votaciones.registraduria.model.Partido;
 import com.votaciones.registraduria.service.CandidatoService;
 import lombok.extern.slf4j.Slf4j;
 
-import org.example.dto.CandidatoListDto;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -93,10 +94,10 @@ public class CandidatoImpl implements CandidatoService {
     }
 
     @Override
-    public ResponseEntity<String> deleteCandidato(CandidatoDto candidatoDto) {
+    public ResponseEntity<String> deleteCandidato(String candidatoDto) {
         try {
             Optional<Candidato> candidatoVerificar =
-                    candidatoRepository.findByCedula(candidatoDto.getCedula());
+                    candidatoRepository.findByCedula(candidatoDto);
             if (candidatoVerificar.isPresent()) {
                 candidatoRepository.delete(candidatoVerificar.get());
                 return ResponseEntity.ok("Se ha eliminado el candidato");

@@ -9,5 +9,5 @@ public interface PartidoService {
     ResponseEntity<String> createPartido(PartidoDto partidoDto);
     ResponseEntity<List<PartidoDto>> getAllPartido();
     ResponseEntity<String> updatePartido(PartidoDto partidoDto);
-    ResponseEntity<String> deletePartido(PartidoDto partidoDto);
+    ResponseEntity<String> deletePartido(String partidoDto);
 }

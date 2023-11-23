@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ControllerMesa {
     @Autowired
     private MesaService mesaService;
@@ -29,15 +30,15 @@ public class ControllerMesa {
         return response;
     }
 
-    @PutMapping
+    @PostMapping
     @RequestMapping(value = "editar-mesa")
     public ResponseEntity<String> updateMesa(@RequestBody MesaDto mesaDto){
         ResponseEntity<String> response = mesaService.updateMesa(mesaDto);
         return response;
     }
-    @DeleteMapping
+    @GetMapping
     @RequestMapping(value = "eliminar-mesa")
-    public ResponseEntity<String> deleteCandidato(@RequestBody  MesaDto mesaDto){
+    public ResponseEntity<String> deleteCandidato(@RequestParam("numeroMesa") String mesaDto){
         ResponseEntity<String> response = mesaService.deleteMesa(mesaDto);
         return response;
     }

@@ -73,10 +73,10 @@ public class MesaImpl implements MesaService {
     }
 
     @Override
-    public ResponseEntity<String> deleteMesa(MesaDto mesaDto) {
+    public ResponseEntity<String> deleteMesa(String mesaDto) {
         try {
             Optional<Mesa> mesaVerificar =
-                    mesaRepository.findByNumero(mesaDto.getNumeroMesa());
+                    mesaRepository.findByNumero(Integer.parseInt(mesaDto));
             if (mesaVerificar.isPresent()) {
                 mesaRepository.delete(mesaVerificar.get());
                 return ResponseEntity.ok("Se ha eliminado la mesa");

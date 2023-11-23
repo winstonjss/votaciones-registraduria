@@ -3,8 +3,8 @@ package com.votaciones.registraduria.controller;
 
 
 import com.votaciones.registraduria.dto.CandidatoDto;
+import com.votaciones.registraduria.dto.CandidatoListDto;
 import com.votaciones.registraduria.service.CandidatoService;
-import org.example.dto.CandidatoListDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +14,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ControllerCandidato {
 
     @Autowired
@@ -32,16 +33,16 @@ public class ControllerCandidato {
         return response;
     }
 
-    @PutMapping
+    @PostMapping
     @RequestMapping(value = "editar-candidato")
     public ResponseEntity<String> updateCandidato(@RequestBody  CandidatoDto candidatoDto){
         ResponseEntity<String> response = serviceRegistraduria.updateCandidato(candidatoDto);
         return response;
     }
-    @DeleteMapping
+    @GetMapping
     @RequestMapping(value = "eliminar-candidato")
-    public ResponseEntity<String> deleteCandidato(@RequestBody  CandidatoDto candidatoDto){
-        ResponseEntity<String> response = serviceRegistraduria.deleteCandidato(candidatoDto);
+    public ResponseEntity<String> deleteCandidato(@RequestParam("cedula") String cedula){
+        ResponseEntity<String> response = serviceRegistraduria.deleteCandidato(cedula);
         return response;
     }
 }

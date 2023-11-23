@@ -4,7 +4,6 @@ import com.votaciones.registraduria.dto.PartidoDto;
 import com.votaciones.registraduria.jpa.PartidoRepository;
 import com.votaciones.registraduria.model.Partido;
 import com.votaciones.registraduria.service.PartidoService;
-import org.example.dto.CandidatoListDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -84,10 +83,10 @@ public class PartidoImpl implements PartidoService {
     }
 
     @Override
-    public ResponseEntity<String> deletePartido(PartidoDto partidoDto) {
+    public ResponseEntity<String> deletePartido(String partidoDto) {
         try {
             Optional<Partido> partidoVerificar =
-                    partidoRepository.findByNumero(Integer.parseInt(partidoDto.getNumeroPartido()));
+                    partidoRepository.findByNumero(Integer.parseInt(partidoDto));
             if (partidoVerificar.isPresent()) {
                 partidoRepository.delete(partidoVerificar.get());
                 return ResponseEntity.ok("Se ha eliminado el partido");

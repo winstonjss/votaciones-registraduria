@@ -11,5 +11,5 @@ public interface MesaService {
     ResponseEntity<String> createMesa(MesaDto mesaDto);
     ResponseEntity<List<MesaDto>> getAllMesa();
     ResponseEntity<String> updateMesa(MesaDto mesaDto);
-    ResponseEntity<String> deleteMesa(MesaDto mesaDto);
+    ResponseEntity<String> deleteMesa(String mesaDto);
 }

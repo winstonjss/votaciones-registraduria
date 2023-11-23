@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class ControllerPartido {
 
     @Autowired
@@ -28,15 +29,15 @@ public class ControllerPartido {
         return response;
     }
 
-    @PutMapping
+    @PostMapping
     @RequestMapping(value = "editar-partido")
     public ResponseEntity<String> updateMesa(@RequestBody PartidoDto partidoDto){
         ResponseEntity<String> response = partidoService.updatePartido(partidoDto);
         return response;
     }
-    @DeleteMapping
+    @GetMapping
     @RequestMapping(value = "eliminar-partido")
-    public ResponseEntity<String> deleteCandidato(@RequestBody  PartidoDto partidoDto){
+    public ResponseEntity<String> deleteCandidato(@RequestParam("numeroPartido")  String partidoDto){
         ResponseEntity<String> response = partidoService.deletePartido(partidoDto);
         return response;
     }

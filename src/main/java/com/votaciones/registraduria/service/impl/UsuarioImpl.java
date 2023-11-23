@@ -1,4 +1,4 @@
-package org.example.service.impl;
+package com.votaciones.registraduria.service.impl;
 
 import com.votaciones.registraduria.dto.UsuarioDto;
 import com.votaciones.registraduria.dto.UsuarioResponse;

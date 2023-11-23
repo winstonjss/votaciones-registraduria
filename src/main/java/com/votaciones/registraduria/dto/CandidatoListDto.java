@@ -1,4 +1,4 @@
-package org.example.dto;
+package com.votaciones.registraduria.dto;
 
 public class CandidatoListDto {
     private String cedula;
