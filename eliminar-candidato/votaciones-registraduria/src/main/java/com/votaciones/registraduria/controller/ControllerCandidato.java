@@ -5,6 +5,7 @@ import com.votaciones.registraduria.dto.CandidatoDto;
 import com.votaciones.registraduria.service.CandidatoService;
 import org.example.dto.CandidatoListDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +21,8 @@ public class ControllerCandidato {
 
     @DeleteMapping
     @RequestMapping(value = "eliminar-candidato")
-    public ResponseEntity<String> deleteCandidato(@RequestBody  CandidatoDto candidatoDto){
-        ResponseEntity<String> response = serviceRegistraduria.deleteCandidato(candidatoDto);
+    public ResponseEntity<String> deleteCandidato(@RequestParam("cedula") String cedula){
+        ResponseEntity<String> response = serviceRegistraduria.deleteCandidato(cedula);
         return response;
     }
 }

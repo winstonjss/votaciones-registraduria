@@ -7,6 +7,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface CandidatoService {
-    ResponseEntity<String> deleteCandidato(CandidatoDto candidatoDto);
+    ResponseEntity<String> deleteCandidato(String cedula);
 
 }

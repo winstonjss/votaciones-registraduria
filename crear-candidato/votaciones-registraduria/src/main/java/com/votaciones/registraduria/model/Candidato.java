@@ -3,8 +3,6 @@ package com.votaciones.registraduria.model;
 import jakarta.persistence.*;
 import lombok.Builder;
 
-
-
 @Entity
 @Builder
 @Table(name = "candidato")

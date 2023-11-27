@@ -1,13 +1,11 @@
 package com.votaciones.registraduria.controller;
 
 
-import com.votaciones.registraduria.dto.CandidatoDto;
 import com.votaciones.registraduria.service.CandidatoService;
-import org.example.dto.CandidatoListDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import com.votaciones.registraduria.dto.*;
 import java.util.List;
 
 

@@ -1,9 +1,8 @@
 package com.votaciones.registraduria.service;
 
-import com.votaciones.registraduria.dto.CandidatoDto;
-import org.example.dto.CandidatoListDto;
-import org.springframework.http.ResponseEntity;
 
+import org.springframework.http.ResponseEntity;
+import com.votaciones.registraduria.dto.*;
 import java.util.List;
 
 public interface CandidatoService {

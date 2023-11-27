@@ -24,10 +24,10 @@ public class CandidatoImpl implements CandidatoService {
     private CandidatoRepository candidatoRepository;
 
     @Override
-    public ResponseEntity<String> deleteCandidato(CandidatoDto candidatoDto) {
+    public ResponseEntity<String> deleteCandidato(String candidatoDto) {
         try {
             Optional<Candidato> candidatoVerificar =
-                    candidatoRepository.findByCedula(candidatoDto.getCedula());
+                    candidatoRepository.findByCedula(candidatoDto);
             if (candidatoVerificar.isPresent()) {
                 candidatoRepository.delete(candidatoVerificar.get());
                 return ResponseEntity.ok("Se ha eliminado el candidato");
